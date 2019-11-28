@@ -1,0 +1,30 @@
+pycompwa.expertsystem.ui package
+================================
+
+Submodules
+----------
+
+pycompwa.expertsystem.ui.default\_settings module
+-------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.ui.default_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.ui.system\_control module
+-----------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.ui.system_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem.ui
+   :members:
+   :undoc-members:
+   :show-inheritance:

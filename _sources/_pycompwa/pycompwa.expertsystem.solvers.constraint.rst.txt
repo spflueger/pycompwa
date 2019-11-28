@@ -1,0 +1,30 @@
+pycompwa.expertsystem.solvers.constraint package
+================================================
+
+Submodules
+----------
+
+pycompwa.expertsystem.solvers.constraint.compat module
+------------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.solvers.constraint.compat
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.solvers.constraint.version module
+-------------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.solvers.constraint.version
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem.solvers.constraint
+   :members:
+   :undoc-members:
+   :show-inheritance:

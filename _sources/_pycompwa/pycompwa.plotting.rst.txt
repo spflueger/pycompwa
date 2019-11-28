@@ -1,0 +1,22 @@
+pycompwa.plotting package
+=========================
+
+Submodules
+----------
+
+pycompwa.plotting.rootplotdatareader module
+-------------------------------------------
+
+.. automodule:: pycompwa.plotting.rootplotdatareader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.plotting
+   :members:
+   :undoc-members:
+   :show-inheritance:

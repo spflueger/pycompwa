@@ -1,0 +1,38 @@
+pycompwa.expertsystem.state package
+===================================
+
+Submodules
+----------
+
+pycompwa.expertsystem.state.conservationrules module
+----------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.state.conservationrules
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.state.particle module
+-------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.state.particle
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.state.propagation module
+----------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.state.propagation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem.state
+   :members:
+   :undoc-members:
+   :show-inheritance:

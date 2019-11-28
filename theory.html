@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Theory &mdash; pycompwa  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Talks and Documents" href="documents.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pycompwa
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Talks and Documents</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#helicity-formalism">Helicity Formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canonical-formalism">Canonical Formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comparison-with-measurements">Comparison with Measurements</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+    <a href= "genindex.html">General Index</a>
+    <a href= "py-modindex.html">Python Modules Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pycompwa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Theory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ComPWA/pycompwa/blob/master/doc/source/theory.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theory">
+<h1>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In general one is interested in gaining knowledge about the interaction of
+particles. Herefore particle reaction experiments are performed to validate
+theoretical models and extract physical quantities and information (based on
+those models). To validate and extract information a comparison of the data from
+the experiment and the theoretical model is needed.</p>
+<p>The probablity amplitude <a class="bibtex reference internal" href="#weinberg-1995" id="id1">[Wei95]</a><span class="bibtex" id="id2">[p.113]</span>  of an initial state
+<span class="math notranslate nohighlight">\(\Psi_i\)</span> going to a final state <span class="math notranslate nohighlight">\(\Psi_f\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\left&lt; \Psi_f \middle| S \middle| \Psi_i \right&gt;.\]</div>
+<p>This is a general formula, so the particle content of the initial and final
+state is arbitrary.</p>
+<p>Experimental physicists measure transition rates or cross sections instead of
+the transition probablity. There are two special cases of initial states, since
+many experimental measurements fall under these two categories:</p>
+<ol class="arabic">
+<li><p>Single particles in the initial state (<span class="math notranslate nohighlight">\(N_I=1\)</span>)</p>
+<p>This is a single particle decaying into the final state particles. Here the
+decay rate <a class="bibtex reference internal" href="#weinberg-1995" id="id3">[Wei95]</a><span class="bibtex" id="id4">[p.136]</span> is</p>
+<div class="math notranslate nohighlight">
+\[d\Gamma(i \rightarrow f) = 2\pi |M_{fi}|^2 \delta^4(p_f - p_i) d\Phi_f\]</div>
+<p><span class="math notranslate nohighlight">\(d\Phi_f\)</span> is the phase space element of the final state, which is
+needed to make a comparison with data. More on this below.</p>
+</li>
+<li><p>Two particles in the initial state (<span class="math notranslate nohighlight">\(N_I=2\)</span>)</p>
+<p>The cross section of a two particle scattering/production process
+<a class="bibtex reference internal" href="#weinberg-1995" id="id5">[Wei95]</a><span class="bibtex" id="id6">[p.137]</span> is</p>
+<div class="math notranslate nohighlight">
+\[d\sigma(i \rightarrow f) = (2\pi)^4 u_i^{-1} |M_{fi}|^2 \delta^4(p_f - p_i) d\Phi_f\]</div>
+<p>with <span class="math notranslate nohighlight">\(u_i^{-1}\)</span> the relative velocity of the initial state particles.</p>
+</li>
+</ol>
+<p>Describing multi body problems (more than 2) is a difficult task, since the
+interaction of more than two particles is difficult to describe
+<a class="bibtex reference internal" href="#weinberg-1995" id="id7">[Wei95]</a><span class="bibtex" id="id8">[ch.4]</span>.</p>
+<p>One can resort to a simplification to treat a many body interaction by successive
+two body interactions. For N body particle decays (N &gt; 2) this is known as the
+isobar model. Here a particle into N final state particles is modeled
+by a sequence of two particle decays. This is also also a assumption of the
+helicity/canonical formalism.</p>
+</div>
+<div class="section" id="helicity-formalism">
+<h2>Helicity Formalism<a class="headerlink" href="#helicity-formalism" title="Permalink to this headline">¶</a></h2>
+<p>Two particle states are the key element here. With these one can construct
+states of total Spin J and projection M.</p>
+<p>The probablity amplitude of a state with spin J and projection M decaying into
+two particles 1 and 2 with helicities <span class="math notranslate nohighlight">\(\lambda_i\)</span> and momentum
+<span class="math notranslate nohighlight">\(\vec{p}\)</span> in the cms frame is given by <a class="bibtex reference internal" href="#chung2006spin" id="id9">[Chu06]</a><span class="bibtex" id="id10">[p.16]</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{ \sum_{t=0}^{N}f(t,k) }{N}\]</div>
+<p>Then</p>
+<p>Show explicity what ComPWA implemented</p>
+<p>sequential two body decay</p>
+</div>
+<div class="section" id="canonical-formalism">
+<h2>Canonical Formalism<a class="headerlink" href="#canonical-formalism" title="Permalink to this headline">¶</a></h2>
+<p>The canonical formalism gives access to the orbital angular momentum <span class="math notranslate nohighlight">\(L\)</span>
+and the Spin <span class="math notranslate nohighlight">\(S\)</span> arising from a pair of two particles.</p>
+<p>There is a simple connection between the two formalism.</p>
+<p>This expression is simply inserted into equation () and that is it!</p>
+<p>The choice of the formalism depends on the physics process being analyzed. Give
+an example here.</p>
+</div>
+<div class="section" id="comparison-with-measurements">
+<h2>Comparison with Measurements<a class="headerlink" href="#comparison-with-measurements" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-theory-0"><dl class="citation">
+<dt class="bibtex label" id="weinberg-1995"><span class="brackets">Wei95</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>,<a href="#id5">3</a>,<a href="#id7">4</a>)</span></dt>
+<dd><p>Steven Weinberg. <em>The Quantum Theory of Fields</em>. Volume 1. Cambridge University Press, 1995. <a class="reference external" href="https://doi.org/10.1017/CBO9781139644167">doi:10.1017/CBO9781139644167</a>.</p>
+</dd>
+<dt class="bibtex label" id="chung2006spin"><span class="brackets"><a class="fn-backref" href="#id9">Chu06</a></span></dt>
+<dd><p>Suh-Urk Chung. Spin formalisms (updated version). Technical Report, Brookhaven National Lab.(BNL), Upton, NY (United States), 2006. URL: <a class="reference external" href="https://suchung.web.cern.ch/spinfm1.pdf">https://suchung.web.cern.ch/spinfm1.pdf</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="documents.html" class="btn btn-neutral float-left" title="Talks and Documents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ComPWA Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

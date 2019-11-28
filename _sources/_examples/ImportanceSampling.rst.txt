@@ -1,0 +1,126 @@
+Importance Sampling
+-------------------
+
+The :math:`J/\Psi \rightarrow \gamma \pi^0 \pi^0` decay is used here
+(which has a narrow :math:`\omega` state)
+
+Let's go!
+
+Step 1: Define intensity
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+First we create the intensity. If this step looks unfamiliar to you, you
+might want to check other intensity construction examples using the
+expert system.
+
+.. code:: ipython3
+
+    from pycompwa.expertsystem.ui.system_control import (
+        StateTransitionManager, InteractionTypes)
+    from pycompwa.expertsystem.amplitude.helicitydecay import (
+        HelicityAmplitudeGeneratorXML)
+    from pycompwa.expertsystem.topology.graph import (
+        get_intermediate_state_edges)
+    from pycompwa.expertsystem.state.particle import (
+        particle_list)
+        
+    initial_state = [("J/psi", [-1, 1])]
+    final_state = [("gamma", [-1, 1]), ("pi0", [0]), ("pi0", [0])]
+    
+    tbd_manager = StateTransitionManager(initial_state, final_state,
+                                         formalism_type='helicity',
+                                         topology_building='isobar')
+    
+    # The omega is so narrow that the hit&miss generation takes way too long.
+    # Therefore we increase the width artificially in this example!
+    omega = particle_list["omega"]
+    parameters = omega['DecayInfo']['Parameter']
+    for par in parameters:
+        if par['@Type'] == 'Width':
+            par['Value'] = 0.001
+    
+    tbd_manager.set_allowed_interaction_types(
+        [InteractionTypes.Strong, InteractionTypes.EM])
+    tbd_manager.allowed_intermediate_particles = ['f2(1270)', 'omega']
+    graph_interaction_settings_groups = tbd_manager.prepare_graphs()
+    (solutions, violated_rules) = tbd_manager.find_solutions(
+            graph_interaction_settings_groups)
+    
+    print("found " + str(len(solutions)) + " solutions!")
+    
+    xml_generator = HelicityAmplitudeGeneratorXML()
+    xml_generator.generate(solutions)
+    xml_generator.write_to_file('model.xml')
+
+Step 2: Create intensity and generate importance weighted phase space sample
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now we generate a phase space sample which is importance sampled by the
+intensity. This can easily be achieved by using the
+``generate_importance_sampled_phsp()`` generate helper function.
+
+.. note::
+   This takes around 1 min on a Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz running multi-threaded
+
+.. code:: ipython3
+
+    # pycompwa is the python interface to ComPWA's c++ modules
+    import pycompwa.ui as pwa
+    
+    particles = pwa.read_particles('model.xml')
+    
+    kin = pwa.create_helicity_kinematics('model.xml', particles)
+    
+    # generate phase space sample (flat) used for amplitude normalization
+    gen = pwa.EvtGenGenerator(kin.get_particle_state_transition_kinematics_info())
+    
+    rand_gen = pwa.StdUniformRealGenerator(12345)
+    
+    phsp_sample = pwa.generate_phsp(100000, gen, rand_gen)
+    
+    # create intensity
+    intensity = pwa.create_intensity('model.xml', particles, kin, phsp_sample)
+    
+    # generate importance sampled phase space sample
+    phsp_sample_importance = pwa.generate_importance_sampled_phsp(2000, kin, gen, intensity, rand_gen)
+
+Step 3: Visualize the phase space sample
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This phase space sample can be visualized in a Dalitz plot. There one
+expects more events, where the intensity is large, but still an overall
+uniform distribution. First create all subsystems. Since in this
+example, we have both :math:`f` and :math:`\omega` resonances, all
+subsystems already exist and this step is redundant.
+
+.. code:: ipython3
+
+    kin.create_all_subsystems()
+    dataset = pwa.convert_events_to_dataset(phsp_sample_importance, kin)
+
+Now we use the ``create_data_array()`` function to get data, which is
+ready to be put into a numpy record array.
+
+.. code:: ipython3
+
+    from pycompwa.plotting import (
+        make_dalitz_plots, PlotData, create_nprecord
+    )
+    
+    # use the direct data point access
+    var_names, dataarray = pwa.create_data_array(dataset)
+    data_record = create_nprecord(var_names, dataarray)
+    
+    print(var_names)
+    # check that the sum of weights is equal to the number of events!
+    print("sum of weights (should be 2000):", sum(data_record.weight))
+
+Finally we create a ``PlotData`` object and pass it to the
+``make_dalitz_plots()`` function.
+
+.. code:: ipython3
+
+    plot_data = PlotData(data_record=data_record)
+    #plotdata.particle_id_to_name_mapping = data_points.get_finalstate_id_to_name_mapping()
+    # plot a 2d histogram
+    make_dalitz_plots(plot_data, ["mSq_3_4_vs_2", "mSq_2_4_vs_3"], bins=50)

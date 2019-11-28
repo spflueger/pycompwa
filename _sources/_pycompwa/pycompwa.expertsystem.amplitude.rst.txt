@@ -1,0 +1,38 @@
+pycompwa.expertsystem.amplitude package
+=======================================
+
+Submodules
+----------
+
+pycompwa.expertsystem.amplitude.abstractgenerator module
+--------------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.amplitude.abstractgenerator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.amplitude.canonicaldecay module
+-----------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.amplitude.canonicaldecay
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pycompwa.expertsystem.amplitude.helicitydecay module
+----------------------------------------------------
+
+.. automodule:: pycompwa.expertsystem.amplitude.helicitydecay
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem.amplitude
+   :members:
+   :undoc-members:
+   :show-inheritance:

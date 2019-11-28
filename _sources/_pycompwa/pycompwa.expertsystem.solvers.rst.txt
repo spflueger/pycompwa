@@ -1,0 +1,17 @@
+pycompwa.expertsystem.solvers package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   pycompwa.expertsystem.solvers.constraint
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem.solvers
+   :members:
+   :undoc-members:
+   :show-inheritance:

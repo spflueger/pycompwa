@@ -1,0 +1,7 @@
+pycompwa
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   pycompwa

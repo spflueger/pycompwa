@@ -1,0 +1,22 @@
+pycompwa.expertsystem package
+=============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   pycompwa.expertsystem.amplitude
+   pycompwa.expertsystem.solvers
+   pycompwa.expertsystem.state
+   pycompwa.expertsystem.topology
+   pycompwa.expertsystem.ui
+   pycompwa.expertsystem.visualization
+
+Module contents
+---------------
+
+.. automodule:: pycompwa.expertsystem
+   :members:
+   :undoc-members:
+   :show-inheritance:
