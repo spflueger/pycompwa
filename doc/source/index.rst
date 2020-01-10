@@ -17,6 +17,7 @@ development.
    usage
    contribute
    documents
+   theory
 
 .. toctree::
    :maxdepth: 1
