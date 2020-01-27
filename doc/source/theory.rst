@@ -15,7 +15,7 @@ The probablity amplitude :cite:`weinberg_1995,p.113`  of an initial state
 
 .. math::
 
-   \left< \Psi_f \middle| S \middle| \Psi_i \right>.
+   S_{fi} = \left< \Psi_f \middle| S \middle| \Psi_i \right> = -2\pi i \delta^4(p_i - p_f)M_{fi}.
 
 This is a general formula, so the particle content of the initial and final
 state is arbitrary.
