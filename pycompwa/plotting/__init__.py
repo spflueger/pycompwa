@@ -5,6 +5,18 @@ from itertools import combinations
 import numpy as np
 import matplotlib.pyplot as plt
 import copy
+import pandas as pd
+
+
+def create_dataframe(dataset, intensity=None):
+    df = pd.DataFrame(dataset.data)
+    df["weights"] = dataset.weights
+
+    if intensity:
+        intensities = intensity.evaluate(dataset.data)
+        df["intensity"] = intensities
+
+    return df
 
 
 class PlotData:
@@ -31,20 +43,6 @@ class Dimension:
         self.field_name = field_name
         self.binary_operator = binary_operator
         self.secondary_field_name = secondary_field_name
-
-
-def create_nprecord(column_names, data_array):
-    if isinstance(data_array, list):
-        data_array = np.asarray(data_array)
-    if column_names and isinstance(data_array, np.ndarray):
-        if len(data_array) == len(column_names):
-            return np.rec.fromarrays(data_array, names=column_names)
-        else:
-            if len(data_array.T) == len(column_names):
-                return np.rec.fromarrays(
-                    data_array.T, names=column_names)
-            else:
-                raise ValueError("Data columns and column names mismatch!")
 
 
 def correct_phi_range(phi):
@@ -189,7 +187,7 @@ def make_binned_distributions(plot_data, dimensions_list,
                         x, str) else x for x in dimensions_list])
         if not new_dimensions_list:
             new_dimensions_list = [[Dimension(x) if isinstance(
-                        x, str) else x for x in dimensions_list]]
+                x, str) else x for x in dimensions_list]]
         dimensions_list = new_dimensions_list
 
     data_weights = (plot_data.data.weight)

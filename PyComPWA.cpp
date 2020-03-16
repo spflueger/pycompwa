@@ -496,38 +496,6 @@ PYBIND11_MODULE(ui, m) {
 
   //------- Plotting
 
-  m.def("create_data_array",
-        [](ComPWA::Data::DataSet DataSample) {
-          std::vector<std::string> KinVarNames;
-          std::vector<std::vector<double>> DataArray;
-          for (auto const &x : DataSample.Data) {
-            KinVarNames.push_back(x.first);
-            DataArray.push_back(x.second);
-          }
-          KinVarNames.push_back("weight");
-          DataArray.push_back(DataSample.Weights);
-          return std::make_pair(KinVarNames, DataArray);
-        },
-        py::return_value_policy::move);
-
-  m.def("create_fitresult_array",
-        [](std::shared_ptr<ComPWA::Intensity> Intensity,
-           ComPWA::Data::DataSet DataSample) {
-          std::vector<std::string> KinVarNames;
-          std::vector<std::vector<double>> DataArray;
-          for (auto const &x : DataSample.Data) {
-            KinVarNames.push_back(x.first);
-            DataArray.push_back(x.second);
-          }
-          KinVarNames.push_back("intensity");
-          KinVarNames.push_back("weight");
-
-          DataArray.push_back(DataSample.Weights);
-          DataArray.push_back(Intensity->evaluate(DataSample.Data));
-          return std::make_pair(KinVarNames, DataArray);
-        },
-        py::return_value_policy::move);
-
   m.def(
       "create_rootplotdata",
       [](const std::string &filename, std::shared_ptr<ComPWA::Kinematics> kin,
